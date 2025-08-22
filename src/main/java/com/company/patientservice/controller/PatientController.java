@@ -52,12 +52,12 @@ public class PatientController {
 		return new ResponseEntity<PatientResponseDTO>(patientService.getPatientByEmail(email), HttpStatus.OK);
 	}
 
-//	@PutMapping("updatePatient/{id}")
-//	@Operation(summary = "Update Patient")
-//	public ResponseEntity<PatientResponseDTO> updatePatient(@PathVariable int id,
-//			@Valid @RequestBody PatientRequestDTO patientRequestDto) {
-//		return ResponseEntity.ok().body(patientService.updatePatient(id, patientRequestDto));
-//	}
+	@PutMapping("updatePatient/{id}")
+	@Operation(summary = "Update Patient")
+	public ResponseEntity<PatientResponseDTO> updatePatient(@PathVariable int id,
+			@Valid @RequestBody PatientRequestDTO patientRequestDto) {
+		return ResponseEntity.ok().body(patientService.updatePatient(id, patientRequestDto));
+	}
 
 	@DeleteMapping("/deletePatient/{id}")
 	@Operation(summary = "Delete Patient by id")
